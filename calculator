@@ -1,0 +1,18 @@
+import math
+
+operator = input("Select an arithmetic operator (* + - /):")
+
+a = float(input("First number:"))
+
+b = float(input("Second number:"))
+
+if operator == "*":
+    c = a * b
+elif operator == "+":
+    c = a + b
+elif operator == "-":
+    c = a - b
+elif operator == "/":
+    c = a/b
+
+print(f"the result is: {round(c, 3)}")
