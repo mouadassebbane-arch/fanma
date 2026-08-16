@@ -1,0 +1,77 @@
+import math
+while True:
+   conv = input("What do you want to convert (time or weight):")
+   if conv in ["time", "weight"]:
+       break
+   print("choose an appropriate measurement(time or weight)")
+if conv == "weight":
+    while True:
+        conv = input("In which one do you want to convert (lbs or kg)?")
+
+        weight = float(input("what's the weight?"))
+        if conv in ["lbs", "kgs"]:
+            break
+        print("Choose an appropriate measurement(lbs, kgs)")
+
+    if conv == "kgs":
+        weight = weight * 2.204
+        print(f"{round(weight, 3)}lbs")
+    elif conv == "lbs":
+        weight = weight * 0.5
+        print(f"{round(weight, 3)}kgs")
+elif conv == "time":
+    while True:
+        conv_t = input("In which do you want to convert (sec, min, h, or days)")
+        time = float(input("What's the time?"))
+        unity = input("and choose which unity the time you had given is (sec, min, h, or days)")
+        if unity in ["sec", "min", "h", "days"] and conv_t in ["sec", "min", "h", "days"]:
+            break
+        print("Choose an appropriate measurement(sec, min, h or days)")
+    if conv_t == "sec":
+        if unity == "sec":
+            print("The time given is already in seconds")
+        elif unity == "min":
+            time = time * 60
+            print(f"{round(time,3)}sec")
+        elif unity == "h":
+            time = time * 3600
+            print(f"{round(time,3)}sec")
+        elif unity == "days":
+            time = time * 3600 * 24
+            print(f"{round(time,3)}sec")
+    elif conv_t == "min":
+        if unity == "min":
+            print("The time given is already in minutes")
+        elif unity == "sec":
+            time = time/60
+            print(f"{round(time,3)}mins")
+        elif unity == "h":
+            time = time * 60
+            print(f"{round(time,3)}mins")
+        elif unity == "days":
+            time = time * 60 * 24
+            print(f"{round(time,3)}mins")
+    elif conv_t == "h":
+        if unity == "h":
+            print("The time given is already in hours")
+        elif unity == "sec":
+            time = time/3600
+            print(f"{round(time,3)}h")
+        elif unity == "min":
+            time = time/60
+            print(f"{round(time,3)}h")
+        elif unity == "days":
+            time = time * 24
+            print(f"{round(time,3)}h")
+    elif conv_t == "days":
+        if unity == "days":
+            print("the time given is already in days")
+        elif unity == "sec":
+            time = time/86400
+            print(f"{round(time,3)}days")
+        elif unity == "h":
+            time = time/24
+            print(f"{round(time,3)}days")
+        elif unity == "min":
+            time = time/3600
+            print(f"{round(time,3)}days")
